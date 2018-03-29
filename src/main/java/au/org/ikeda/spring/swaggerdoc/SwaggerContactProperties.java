@@ -4,7 +4,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties(prefix = "swaggerdoc.contact")
-public class SwaggerContactConfig {
+public class SwaggerContactProperties {
 
     private String name;
     private String url;

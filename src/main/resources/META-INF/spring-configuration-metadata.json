@@ -3,86 +3,79 @@
   "groups": [
     {
       "name": "swaggerdoc",
-      "type": "com.example.ontologyapi.config.SwaggerConfig",
-      "sourceType": "com.example.ontologyapi.config.SwaggerConfig",
+      "type": "com.example.ontologyapi.config.SwaggerProperties",
+      "sourceType": "com.example.ontologyapi.config.SwaggerProperties",
       "description" : "Properties to configure Swagger metadata"
     },
     {
       "name" : "swaggerdoc.contact",
-      "type" : "com.example.ontologyapi.config.SwaggerContactConfig",
-      "sourceType" : "com.example.ontologyapi.config.SwaggerContactConfig",
+      "type" : "com.example.ontologyapi.config.SwaggerContactProperties",
+      "sourceType" : "com.example.ontologyapi.config.SwaggerContactProperties",
       "description" : "Properties to configure the contact details of the Swagger config"
-    },
-    {
-      "name" : "monitor",
-      "type" : "com.example.ontologyapi.config.MonitoringConfig",
-      "sourceType" : "com.example.ontologyapi.config.MonitoringConfig",
-      "description" : "Properties to setup basic micrometer properties"
     }
   ],
   "properties": [
     {
-      "sourceType": "com.example.ontologyapi.config.SwaggerConfig",
+      "sourceType": "com.example.ontologyapi.config.SwaggerProperties",
       "name": "swaggerdoc.host",
       "type": "java.lang.String",
       "description" : "The host that the API refers to",
       "defaultValue" : "localhost:8080"
     },
     {
-      "sourceType": "com.example.ontologyapi.config.SwaggerConfig",
+      "sourceType": "com.example.ontologyapi.config.SwaggerProperties",
       "name": "swaggerdoc.title",
       "type" : "java.lang.String",
       "description" : "The title that identifies the API",
       "defaultValue" : "My new API"
     },
     {
-      "sourceType" : "com.example.ontologyapi.config.SwaggerConfig",
+      "sourceType" : "com.example.ontologyapi.config.SwaggerProperties",
       "name" : "swaggerdoc.version",
       "type" : "java.lang.String",
       "description" : "The version the API is currently tagged as",
       "defaultValue" : "0.1"
     },
     {
-      "sourceType" : "com.example.ontologyapi.config.SwaggerConfig",
+      "sourceType" : "com.example.ontologyapi.config.SwaggerProperties",
       "name" : "swaggerdoc.termsUrl",
       "type" : "java.lang.String",
       "description" : "The URL pointing to the terms of agreement for this API",
       "default" : "https://github.com"
     },
     {
-      "sourceType" : "com.example.ontologyapi.config.SwaggerConfig",
+      "sourceType" : "com.example.ontologyapi.config.SwaggerProperties",
       "name" : "swaggerdoc.description",
       "type" : "java.lang.String",
       "description" : "A brief paragraph describing this API",
       "default" : "A new API for the team"
     },
     {
-      "sourceType" : "com.example.ontologyapi.config.SwaggerConfig",
+      "sourceType" : "com.example.ontologyapi.config.SwaggerProperties",
       "name" : "swaggerdoc.licenseUrl",
       "type" : "java.lang.String",
       "description" : "URL to the license for this API",
       "default" : "https://github.com"
     },
     {
-      "sourceType" : "com.example.ontologyapi.config.SwaggerContactConfig",
+      "sourceType" : "com.example.ontologyapi.config.SwaggerProperties",
+      "name" : "swaggerdoc.paths",
+      "type" : "java.util.List"
+    },
+    {
+      "sourceType" : "com.example.ontologyapi.config.SwaggerContactProperties",
       "name" : "swaggerdoc.contact.name",
       "type" : "java.lang.String"
     },
     {
-      "sourceType" : "com.example.ontologyapi.config.SwaggerContactConfig",
+      "sourceType" : "com.example.ontologyapi.config.SwaggerContactProperties",
       "name" : "swaggerdoc.contact.url",
       "type" : "java.lang.String"
     },
     {
-      "sourceType": "com.example.ontologyapi.config.SwaggerContactConfig",
+      "sourceType": "com.example.ontologyapi.config.SwaggerContactProperties",
       "name": "swaggerdoc.contact.email",
       "type": "java.lang.String"
-    },
-    {
-      "sourceType" : "com.example.ontologyapi.config.MonitoringConfig",
-      "name" : "monitor.instanceId",
-      "type" : "java.lang.String",
-      "default" : "instance-1"
     }
   ]
 }

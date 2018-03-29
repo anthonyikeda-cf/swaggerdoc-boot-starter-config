@@ -1,13 +1,11 @@
 package au.org.ikeda.spring.swaggerdoc;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @ConfigurationProperties(prefix = "swaggerdoc")
-public class SwaggerConfig {
+public class SwaggerProperties {
 
     private String host;
 
@@ -23,9 +21,9 @@ public class SwaggerConfig {
 
     private List<String> paths;
 
-    private SwaggerContactConfig swaggerContactConfig;
+    private SwaggerContactProperties swaggerContactConfig;
 
-    public SwaggerConfig(SwaggerContactConfig _contactConfig) {
+    public SwaggerProperties(SwaggerContactProperties _contactConfig) {
         this.swaggerContactConfig = _contactConfig;
     }
 
@@ -77,11 +75,11 @@ public class SwaggerConfig {
         this.licenseUrl = licenseUrl;
     }
 
-    public SwaggerContactConfig getSwaggerContactConfig() {
+    public SwaggerContactProperties getSwaggerContactConfig() {
         return swaggerContactConfig;
     }
 
-    public void setSwaggerContactConfig(SwaggerContactConfig swaggerContactConfig) {
+    public void setSwaggerContactConfig(SwaggerContactProperties swaggerContactConfig) {
         this.swaggerContactConfig = swaggerContactConfig;
     }
     public List<String> getPaths() {

@@ -1,7 +1,5 @@
 package au.org.ikeda.spring.swaggerdoc;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,15 +14,15 @@ import java.util.HashSet;
 
 import static springfox.documentation.builders.PathSelectors.regex;
 
-@EnableConfigurationProperties(SwaggerConfig.class)
+@EnableConfigurationProperties(SwaggerProperties.class)
 @Configuration
 @EnableSwagger2
 public class SwaggerAutoConfiguration {
 
-    private SwaggerConfig swaggerConfig;
+    private SwaggerProperties swaggerProperties;
 
-    public SwaggerAutoConfiguration(SwaggerConfig _config) {
-        this.swaggerConfig = _config;
+    public SwaggerAutoConfiguration(SwaggerProperties _config) {
+        this.swaggerProperties = _config;
     }
 
     @Bean
@@ -32,11 +30,11 @@ public class SwaggerAutoConfiguration {
 
         Docket docket = new Docket(DocumentationType.SWAGGER_2);
 
-        this.swaggerConfig.getPaths().forEach(path -> {
+        this.swaggerProperties.getPaths().forEach(path -> {
             docket.select().paths(regex(path)).build();
         });
 
-        return docket.protocols(schemes()).host(swaggerConfig.getHost()).apiInfo(metadata());
+        return docket.protocols(schemes()).host(swaggerProperties.getHost()).apiInfo(metadata());
     }
 
     private HashSet<String> schemes() {
@@ -47,14 +45,14 @@ public class SwaggerAutoConfiguration {
 
     private ApiInfo metadata() {
         ApiInfoBuilder builder = new ApiInfoBuilder();
-        return builder.contact(new Contact(swaggerConfig.getSwaggerContactConfig().getName(),
-                swaggerConfig.getSwaggerContactConfig().getUrl(),
-                swaggerConfig.getSwaggerContactConfig().getEmail()))
-                .title(swaggerConfig.getTitle())
-                .description(swaggerConfig.getDescription())
-                .version(swaggerConfig.getVersion())
-                .termsOfServiceUrl(swaggerConfig.getTermsUrl())
-                .license(swaggerConfig.getLicenseUrl()).build();
+        return builder.contact(new Contact(swaggerProperties.getSwaggerContactConfig().getName(),
+                swaggerProperties.getSwaggerContactConfig().getUrl(),
+                swaggerProperties.getSwaggerContactConfig().getEmail()))
+                .title(swaggerProperties.getTitle())
+                .description(swaggerProperties.getDescription())
+                .version(swaggerProperties.getVersion())
+                .termsOfServiceUrl(swaggerProperties.getTermsUrl())
+                .license(swaggerProperties.getLicenseUrl()).build();
     }
 
 

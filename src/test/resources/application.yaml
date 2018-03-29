@@ -1,0 +1,13 @@
+swaggerdoc:
+  host: localhost:8080
+  title: Ontology API
+  version: 0.1
+  description: Manages ontology definitions associated with Workflows
+  licenseUrl: https://github.com/CrowdFlower/ontology-api/LICENSE.md
+  termsUrl: https://github.com/CrowdFlower/ontology-api
+  paths:
+    - /v1/ontology.*
+  contact:
+    name: Team JR
+    url: https://github.com/team-jr
+    email: team-jr@crowdflower.com
