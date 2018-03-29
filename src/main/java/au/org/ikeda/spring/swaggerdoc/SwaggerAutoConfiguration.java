@@ -26,6 +26,13 @@ public class SwaggerAutoConfiguration {
     }
 
     @Bean
+    public SwaggerConfig swaggerConfig() {
+        SwaggerConfig config = new SwaggerConfig();
+        config.put("swagger.host", swaggerProperties.getHost());
+        return config;
+    }
+
+    @Bean
     public Docket documentApi() {
 
         Docket docket = new Docket(DocumentationType.SWAGGER_2);
